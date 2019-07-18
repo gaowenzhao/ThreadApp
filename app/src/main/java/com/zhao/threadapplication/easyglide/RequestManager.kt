@@ -14,7 +14,7 @@ class RequestManager {
     private var threadPoolExecutor : ExecutorService? = null
     private val maxSize = Runtime.getRuntime().availableProcessors()
     fun addTask(task: RequestTask){
-        if(threadPoolExecutor==null) threadPoolExecutor = Executors.newFixedThreadPool(maxSize)
+       if(threadPoolExecutor==null) threadPoolExecutor = Executors.newFixedThreadPool(maxSize)
         threadPoolExecutor?.execute(task)
     }
     fun stopAllTask(){
