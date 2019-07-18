@@ -12,7 +12,7 @@ class RequestTask(var request: BitmapRequest) :Runnable{
             e.printStackTrace()
         }
         request.imgView.post {
-//            Log.i("RequestTask","currentThread${request.url}=${Thread.currentThread().name}")
+            Log.i("RequestTask","currentThread${request.url}=${Thread.currentThread().name}")
         }
     }
 }
