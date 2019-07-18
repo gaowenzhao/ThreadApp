@@ -12,7 +12,7 @@ class RequestManager {
         val instance = RequestManager()
     }
     private var threadPoolExecutor : ExecutorService? = null
-    private val maxSize = Runtime.getRuntime().availableProcessors()
+    private val maxSize = Runtime.getRuntime().availableProcessors()//依据cpu核数设置合适的线程数
     fun addTask(task: RequestTask){
        if(threadPoolExecutor==null) threadPoolExecutor = Executors.newFixedThreadPool(maxSize)
         threadPoolExecutor?.execute(task)

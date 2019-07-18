@@ -1,14 +1,8 @@
 package com.zhao.threadapplication
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity;
-import com.zhao.threadapplication.easyglide.BitmapRequest
-import com.zhao.threadapplication.easyglide.EasyGlide
-import com.zhao.threadapplication.easyglide.RequestManager
-import com.zhao.threadapplication.easyglide.RequestTask
-
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     var j = 1
@@ -18,16 +12,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener {
-          var k =j+10
-          for(i in j..k){
-              EasyGlide.with().load("$i").into(iv_img)
-          }
-          j = k+1
+           val intent =  intent.setClass(this@MainActivity,SecondActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        RequestManager.instance.stopAllTask()
-    }
 }

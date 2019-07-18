@@ -3,6 +3,7 @@ package com.zhao.threadapplication.easyglide
 import android.widget.ImageView
 
 class BitmapRequest {
+
     lateinit var url:String
     lateinit var imgView:ImageView
     fun load(url:String):BitmapRequest{
